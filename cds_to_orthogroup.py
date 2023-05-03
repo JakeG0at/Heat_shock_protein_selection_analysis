@@ -1,9 +1,7 @@
 import os
-
 input_file = "/home/jake/Downloads/HSP_Project/CDS/all_cds.fasta"
 output_dir = "/home/jake/Downloads/HSP_Project/CDS/cds_orthogroups"
-reference = "/home/jake/Downloads/HSP_Project/aligned_seq_matching_header_as_cds/modifed"
-
+reference = "/scratch/jlamb/salmo_hsp_orthogroups/aligned_heatshock_proteins/renamed"
 
 # read in the input file and return a generator that yields one header-sequence pair at a time
 def read_fasta(input_file):
@@ -20,7 +18,6 @@ def read_fasta(input_file):
             else:
                 seq += line
         yield header, seq
-
 
 # for each file in the reference directory
 for file in os.listdir(reference):

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#SBATCH --qos mrmckain
+#SBATCH --partition ultrahigh
+#SBATCH --job-name Mafft
+#SBATCH --mem 60G
+#SBATCH -n 1   # Number of tasks
+#SBATCH -N 1   # Number of nodes
+#SBATCH -c 32  # Number of cores per task
+
+# Launch the job with srun
+srun python3 /scratch/jlamb/scripts/cds_orthologs.py
+
