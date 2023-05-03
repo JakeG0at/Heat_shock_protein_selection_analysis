@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH --qos main
+#SBATCH --partition main
+#SBATCH --job-name=hyphy
+#SBATCH --mem=15G
+#SBATCH -n 1 #tasks
+#SBATCH -N 1 #nodes
+#SBATCH -c 4 #cores
+
+source activate /home/jlamb/miniconda3/envs/science/
+hyphy meme $1 $2
